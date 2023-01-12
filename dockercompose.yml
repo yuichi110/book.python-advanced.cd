@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   myapp:
-    image: iyuichivm/myapp:ba32c641cd6bf5098b6e542f05cba8a4b1fb7758
+    image: iyuichivm/myapp:9659f810eb5293872d681bf78ca146585c2ff0bb
     container_name: myapp
     ports:
       - "8080:80"
