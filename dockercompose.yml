@@ -1,6 +1,6 @@
 services:
   myapp.app:
-    image: myapp.app:local
+    image: myapp.app:8f3c991989cf8ae9fd3749ffb34f757d7d1a9c87
     container_name: myapp.app
     ports:
       - "80:80"
@@ -13,7 +13,7 @@ services:
       - "myapp.db"
 
   myapp.db:
-    image: myapp.db:local
+    image: myapp.db:8f3c991989cf8ae9fd3749ffb34f757d7d1a9c87
     container_name: myapp.db
     environment:
       POSTGRES_DB: postgres
