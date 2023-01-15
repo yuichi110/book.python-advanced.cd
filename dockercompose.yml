@@ -1,8 +1,21 @@
-version: "3.7"
-
 services:
-  myapp:
-    image: iyuichivm/myapp:9659f810eb5293872d681bf78ca146585c2ff0bb
-    container_name: myapp
+  myapp.app:
+    image: myapp.app:local
+    container_name: myapp.app
     ports:
-      - "8080:80"
+      - "80:80"
+    environment:
+      DB_HOST: myapp.db
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASSWORD: ${MYAPP_POSTGRES_PASSWORD}
+    depends_on:
+      - "myapp.db"
+
+  myapp.db:
+    image: myapp.db:local
+    container_name: myapp.db
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${MYAPP_POSTGRES_PASSWORD}
